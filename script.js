@@ -248,68 +248,25 @@ function actualizarCarrito() {
             producto.precio * producto.cantidad;
 
 
-
         suma += subtotal;
 
 
 
-
-        let div =
-            document.createElement("div");
-
+        let div = document.createElement("div");
 
 
         div.innerHTML = `
 
+        <h4>
+            ✔ ${producto.nombre} 
+            <span style="color:#b98b4c;">
+                x${producto.cantidad}
+            </span>
+        </h4>
 
-<h4>${producto.nombre}</h4>
+        <hr>
 
-
-<p>
-
-$${formatearPrecio(producto.precio)}
-
-x ${producto.cantidad}
-
-=
-
-<b>
-
-$${formatearPrecio(subtotal)}
-
-</b>
-
-</p>
-
-
-<button onclick="cambiarCantidad('${producto.nombre}',1)">
-
-+
-
-</button>
-
-
-
-<button onclick="cambiarCantidad('${producto.nombre}',-1)">
-
--
-
-</button>
-
-
-
-<button onclick="eliminarProducto('${producto.nombre}')">
-
-🗑
-
-</button>
-
-
-<hr>
-
-
-`;
-
+    `;
 
 
         lista.appendChild(div);

@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito - Aroma Studio</title>
 
     <style>
@@ -12,48 +13,51 @@
             margin: 0;
         }
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background: white;
+        header h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .volver-menu {
+            display: inline-block;
+            background: #b98b4c;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 16px;
         }
 
         .carrito {
-            max-width: 800px;
-            margin: auto;
-            padding: 30px;
+            width: 100%;
+            max-width: 100%;
+            padding: 15px;
         }
 
         .cart-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: white;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-            animation: fadeIn 0.3s ease;
+            width: 100%;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .cart-item h4 {
+            font-size: 22px;
+            margin: 0 0 10px;
+        }
+
+        .cart-item p {
+            font-size: 18px;
         }
 
         .controls button {
-            margin: 0 5px;
-            padding: 8px 12px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            background: #b98b4c;
-            color: white;
-        }
-
-        .controls .delete {
-            background: #b98b4c;
+            width: 50px;
+            height: 50px;
+            font-size: 22px;
         }
 
         #total {
-            text-align: right;
-            font-size: 22px;
-            margin-top: 20px;
+            text-align: center;
+            font-size: 32px;
         }
 
         button.whatsapp {
@@ -92,6 +96,10 @@
 
     <header>
         <h2>🛒 Tu Carrito</h2>
+
+        <a href="index.html" class="volver-menu">
+            ← Volver al menú
+        </a>
     </header>
 
     <section class="carrito">
