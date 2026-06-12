@@ -4,833 +4,414 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;
 }
 
 body {
-
     margin: 0;
-
     font-family: 'Poppins', sans-serif;
-
     background: #fdf8f2;
-
     color: #3d3027;
-
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
 }
-
-
 
 /* NAV */
 
 nav {
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 25px 8%;
-
     background: white;
-
 }
-
 
 nav h2 {
-
     font-family: Georgia, serif;
-
     font-size: 30px;
-
     margin: 0;
-
 }
-
 
 .menu {
-
     display: flex;
-
     align-items: center;
-
     gap: 25px;
-
 }
-
 
 nav a {
-
     text-decoration: none;
-
     color: #5c4738;
-
 }
-
 
 .btn-nav {
-
     background: #b98b4c;
-
     color: white !important;
-
     padding: 10px 20px;
-
     border-radius: 25px;
-
 }
-
-
-
-
 
 /* HERO */
 
 .hero {
-
     height: 85vh;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     text-align: center;
-
     background:
-
         linear-gradient(rgba(0, 0, 0, .35),
             rgba(0, 0, 0, .35)),
-
         url("img/banner.jpg");
-
-
     background-size: cover;
-
     background-position: center;
-
     color: white;
-
 }
-
 
 .hero-contenido {
-
     max-width: 800px;
-
 }
-
 
 .hero h1 {
-
     font-size: 55px;
-
     font-family: Georgia, serif;
-
 }
-
-
-
-
 
 /* BOTONES */
 
 button {
-
     background: #b98b4c;
-
     color: white;
-
     border: none;
-
     padding: 15px 35px;
-
     border-radius: 30px;
-
     cursor: pointer;
-
     font-size: 16px;
-
     transition: .2s;
-
+    max-width: 100%;
 }
-
 
 button:hover {
-
     background: #8f6635;
-
 }
-
 
 button.clicked {
-
     background: #25D366 !important;
-
     transform: scale(.9);
-
 }
-
-
-
-
 
 /* SECCIONES */
 
 section {
-
     padding: 80px 8%;
-
     text-align: center;
-
+    max-width: 100%;
 }
-
 
 section h2 {
-
     font-size: 38px;
-
     font-family: Georgia, serif;
-
 }
-
-
-
-
 
 /* PRODUCTOS */
 
 .productos {
-
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-
     gap: 35px;
-
+    width: 100%;
 }
-
 
 .card {
-
     background: white;
-
     padding: 25px;
-
     border-radius: 25px;
-
     box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
-
     transition: .3s;
-
+    width: 100%;
+    min-width: 0;
 }
-
 
 .card:hover {
-
     transform: translateY(-5px);
-
 }
-
 
 .card img {
-
     width: 100%;
-
     height: 280px;
-
     object-fit: cover;
-
     border-radius: 20px;
-
 }
-
 
 .precio {
-
     font-size: 25px;
-
     font-weight: bold;
-
     color: #b98b4c;
-
     margin: 20px;
-
 }
-
-
-
-
 
 /* BENEFICIOS */
 
 .beneficios {
-
     background: white;
-
 }
-
 
 .beneficios-contenedor {
-
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-
+    width: 100%;
 }
-
 
 .beneficio {
-
     background: #fdf8f2;
-
     padding: 40px 25px;
-
     border-radius: 25px;
-
+    width: 100%;
+    min-width: 0;
 }
-
 
 .icono {
-
-    font-size: 45px;
-
+    font-size: 32px;
 }
-
-
-
-
 
 /* GALERIA */
 
 .galeria {
-
     background: white;
-
 }
-
 
 .galeria-contenedor {
-
     display: grid;
-
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
     gap: 25px;
-
 }
-
 
 .galeria img {
-
     width: 100%;
-
     height: 280px;
-
     object-fit: cover;
-
     border-radius: 25px;
-
 }
-
-
-
-
 
 /* CARRITO */
 
 .carrito {
-
     background: white;
-
     margin: 40px 8%;
-
     padding: 40px;
-
     border-radius: 30px;
-
 }
-
-
-
-
 
 /* CONTACTO */
 
 .contacto {
-
     background: white;
-
     border-radius: 30px;
-
     margin: 40px 8%;
-
     padding: 70px 40px;
-
 }
-
 
 .contacto p {
-
     max-width: 600px;
-
     margin: 20px auto;
-
     font-size: 18px;
-
     color: #6d5b4d;
-
 }
-
 
 /* BOTON CONTACTO */
 
 .btn-contacto {
-
     display: inline-block;
-
     background: #b98b4c;
-
     color: white;
-
     padding: 10px 18px;
-
     border-radius: 25px;
-
     text-decoration: none;
-
     margin-top: 30px;
-
     transition: .3s;
-
 }
-
 
 .btn-contacto:hover {
-
     background: #8f6635;
-
     transform: translateY(-2px);
-
 }
-
-
-
-
 
 /* POPUP */
 
 #mensaje-carrito {
-
     position: fixed;
-
     top: 30px;
-
     right: 30px;
-
     background: #b98b4c;
-
     color: white;
-
     padding: 15px 25px;
-
     border-radius: 30px;
-
     opacity: 0;
-
     transform: translateY(-30px);
-
     transition: .3s;
-
     z-index: 9999;
-
 }
-
 
 #mensaje-carrito.mostrar {
-
     opacity: 1;
-
     transform: translateY(0);
-
 }
-
-
-
-
 
 /* FOOTER */
 
-
 footer {
-
     background: #fdf8f2;
-
     padding: 60px 20px 30px;
-
     text-align: center;
-
 }
-
 
 .footer-contenido {
-
     max-width: 900px;
-
     margin: auto;
-
 }
-
 
 .redes-footer {
-
     display: flex;
-
     justify-content: center;
-
     gap: 15px;
-
     flex-wrap: wrap;
-
     margin: 30px;
-
 }
-
 
 .redes-footer a {
-
     background: #b98b4c;
-
     color: white;
-
     padding: 10px 18px;
-
     border-radius: 25px;
-
     text-decoration: none;
-
     transition: .3s;
-
 }
-
 
 .redes-footer a:hover {
-
     background: #8f6635;
-
     transform: translateY(-2px);
-
 }
-
-
-
-
 
 /* WHATSAPP */
 
 .whatsapp {
-
     position: fixed;
-
     bottom: 25px;
-
     right: 25px;
-
     background: #25D366;
-
     color: white;
-
     width: 60px;
-
     height: 60px;
-
     border-radius: 50%;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     font-size: 30px;
-
     text-decoration: none;
-
+    z-index: 9999;
 }
-
-
-
-
 
 /* CONTADOR */
 
 #contador {
-
     display: inline-block;
-
     transition: .3s;
-
 }
-
 
 #contador.animate {
-
     transform: scale(1.6);
-
     color: #b98b4c;
-
 }
 
+/* IMAGENES */
 
+img {
+    max-width: 100%;
+    height: auto;
+}
 
+/* RESPONSIVE */
 
-
-/* CELULAR */
-
-
-@media(max-width:700px) {
-
+@media (max-width:700px) {
 
     nav {
-
         flex-direction: column;
-
         gap: 20px;
-
+        padding: 15px 20px;
+        width: 100%;
     }
 
+    nav h2 {
+        font-size: 22px;
+        text-align: center;
+    }
 
     .menu {
-
         flex-direction: column;
-
+        width: 100%;
+        gap: 10px;
+        align-items: center;
     }
 
+    .menu a {
+        font-size: 12px;
+    }
+
+    .menu button {
+        padding: 8px 12px;
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .hero {
+        width: 100%;
+        height: 90vh;
+    }
 
     .hero h1 {
-
         font-size: 35px;
-
+        padding: 0 20px;
     }
 
-
-    .beneficios-contenedor {
-
-        grid-template-columns: 1fr;
-
+    .hero p {
+        font-size: 14px;
+        padding: 0 20px;
     }
-
 
     .productos {
-
         grid-template-columns: 1fr;
-
+        width: 100%;
     }
 
+    .beneficios-contenedor {
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+    }
 
     button {
-
         width: 100%;
-
     }
 
+    .carrito {
+        margin: 20px;
+        padding: 25px;
+    }
 
     .contacto {
-
-        margin: 30px 5%;
-
-        padding: 50px 25px;
-
+        margin: 20px;
+        padding: 40px 20px;
     }
 
-    /* =========================
-   CORRECCIÓN RESPONSIVE ANDROID
-========================= */
-
-
-    /* Evita espacio blanco lateral */
-    html,
-    body {
-
-        width: 100%;
-        max-width: 100%;
-        overflow-x: hidden;
-
+    .contacto a {
+        display: inline-block;
+        background: #b98b4c;
+        color: white;
+        padding: 12px 25px;
+        border-radius: 25px;
+        text-decoration: none;
     }
-
-
-    /* Todas las imágenes se ajustan */
-    img {
-
-        max-width: 100%;
-        height: auto;
-
-    }
-
-
-    /* Evita que elementos grandes se salgan */
-    section,
-    header,
-    footer,
-    nav {
-
-        max-width: 100%;
-        overflow-x: hidden;
-
-    }
-
-
-
-    /* MENU EN CELULAR */
-    @media(max-width:700px) {
-
-
-        nav {
-
-            padding: 15px 20px;
-            width: 100%;
-
-        }
-
-
-        nav h2 {
-
-            font-size: 22px;
-            text-align: center;
-
-        }
-
-
-
-        .menu {
-
-            width: 100%;
-            gap: 10px;
-            align-items: center;
-
-        }
-
-
-
-        .menu a {
-
-            font-size: 12px;
-
-        }
-
-
-
-        .menu button {
-
-            padding: 8px 12px;
-            font-size: 12px;
-
-        }
-
-
-
-        /* HERO */
-
-        .hero {
-
-            width: 100%;
-            height: 90vh;
-
-        }
-
-
-
-        .hero h1 {
-
-            font-size: 35px;
-            padding: 0 20px;
-
-        }
-
-
-
-        .hero p {
-
-            font-size: 14px;
-            padding: 0 20px;
-
-        }
-
-
-
-
-        /* PRODUCTOS */
-
-        .productos {
-
-            width: 100%;
-            grid-template-columns: 1fr;
-
-        }
-
-
-        .card {
-
-            width: 100%;
-
-        }
-
-
-
-        /* CARRITO */
-
-        .carrito {
-
-            margin: 20px;
-            padding: 25px;
-
-        }
-
-
-
-        /* CONTACTO */
-
-        .contacto {
-
-            margin: 20px;
-            padding: 40px 20px;
-
-        }
-
-
-
-        .contacto a {
-
-            display: inline-block;
-
-            background: #b98b4c;
-
-            color: white;
-
-            padding: 12px 25px;
-
-            border-radius: 25px;
-
-            text-decoration: none;
-
-        }
-
-
-
-    }
-
-
-
-    /* BOTON FLOTANTE WHATSAPP */
-
-    .whatsapp {
-
-        z-index: 9999;
-
-    }
-
-
 }
