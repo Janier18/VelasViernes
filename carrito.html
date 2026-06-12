@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito - Aroma Studio</title>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #fdf8f2;
+            margin: 0;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background: white;
+        }
+
+        .carrito {
+            max-width: 800px;
+            margin: auto;
+            padding: 30px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            animation: fadeIn 0.3s ease;
+        }
+
+        .controls button {
+            margin: 0 5px;
+            padding: 8px 12px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: #b98b4c;
+            color: white;
+        }
+
+        .controls .delete {
+            background: #c0392b;
+        }
+
+        #total {
+            text-align: right;
+            font-size: 22px;
+            margin-top: 20px;
+        }
+
+        button.whatsapp {
+            width: 100%;
+            margin-top: 20px;
+            padding: 15px;
+            background: #25D366;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .empty {
+            text-align: center;
+            color: gray;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h2>🛒 Tu Carrito</h2>
+    </header>
+
+    <section class="carrito">
+
+        <div id="lista-carrito"></div>
+
+        <h3 id="total">Total: $0</h3>
+
+        <button class="whatsapp" onclick="enviarWhatsApp()">
+            Enviar pedido por WhatsApp
+        </button>
+
+    </section>
+
+    <script>
+
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+
+        // 🔥 FUNCIÓN PARA PUNTOS DE MILES
+        function formatearPrecio(valor) {
+            return new Intl.NumberFormat('es-CO').format(valor);
+        }
+
+        function cambiarCantidad(nombre, cambio) {
+
+            let item = carrito.find(i => i.nombre === nombre);
+
+            if (!item) return;
+
+            item.cantidad += cambio;
+
+            if (item.cantidad <= 0) {
+                carrito = carrito.filter(i => i.nombre !== nombre);
+            }
+
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            actualizarCarrito();
+        }
+
+        function eliminarProducto(nombre) {
+
+            carrito = carrito.filter(i => i.nombre !== nombre);
+
+            localStorage.setItem("carrito", JSON.stringify(carrito));
+            actualizarCarrito();
+        }
+
+        function actualizarCarrito() {
+
+            let lista = document.getElementById("lista-carrito");
+            let total = document.getElementById("total");
+
+            lista.innerHTML = "";
+
+            let suma = 0;
+
+            if (carrito.length === 0) {
+                lista.innerHTML = "<p class='empty'>Tu carrito está vacío</p>";
+            }
+
+            carrito.forEach(item => {
+
+                let subtotal = item.precio * item.cantidad;
+                suma += subtotal;
+
+                let div = document.createElement("div");
+                div.className = "cart-item";
+
+                div.innerHTML = `
+            <div>
+                <h4>${item.nombre}</h4>
+                <p>$${formatearPrecio(item.precio)} x ${item.cantidad} = <b>$${formatearPrecio(subtotal)}</b></p>
+            </div>
+
+            <div class="controls">
+                <button onclick="cambiarCantidad('${item.nombre}', -1)">-</button>
+                <button onclick="cambiarCantidad('${item.nombre}', 1)">+</button>
+                <button class="delete" onclick="eliminarProducto('${item.nombre}')">🗑</button>
+            </div>
+        `;
+
+                lista.appendChild(div);
+            });
+
+            total.innerText = "Total: $" + formatearPrecio(suma);
+        }
+
+        function enviarWhatsApp() {
+
+            if (carrito.length === 0) {
+                alert("Carrito vacío");
+                return;
+            }
+
+            let mensaje = "Hola, deseo hacer un pedido:%0A%0A";
+            let total = 0;
+
+            carrito.forEach(item => {
+
+                let subtotal = item.precio * item.cantidad;
+                mensaje += `• ${item.nombre} x${item.cantidad} = $${formatearPrecio(subtotal)}%0A`;
+
+                total += subtotal;
+            });
+
+            mensaje += `%0A Total: $${formatearPrecio(total)}`;
+
+            window.open(`https://wa.me/573116082946?text=${mensaje}`, "_blank");
+        }
+
+        actualizarCarrito();
+
+    </script>
+
+</body>
+
+</html>
