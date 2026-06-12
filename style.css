@@ -646,5 +646,191 @@ footer {
 
     }
 
+    /* =========================
+   CORRECCIÓN RESPONSIVE ANDROID
+========================= */
+
+
+    /* Evita espacio blanco lateral */
+    html,
+    body {
+
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+
+    }
+
+
+    /* Todas las imágenes se ajustan */
+    img {
+
+        max-width: 100%;
+        height: auto;
+
+    }
+
+
+    /* Evita que elementos grandes se salgan */
+    section,
+    header,
+    footer,
+    nav {
+
+        max-width: 100%;
+        overflow-x: hidden;
+
+    }
+
+
+
+    /* MENU EN CELULAR */
+    @media(max-width:700px) {
+
+
+        nav {
+
+            padding: 15px 20px;
+            width: 100%;
+
+        }
+
+
+        nav h2 {
+
+            font-size: 22px;
+            text-align: center;
+
+        }
+
+
+
+        .menu {
+
+            width: 100%;
+            gap: 10px;
+            align-items: center;
+
+        }
+
+
+
+        .menu a {
+
+            font-size: 12px;
+
+        }
+
+
+
+        .menu button {
+
+            padding: 8px 12px;
+            font-size: 12px;
+
+        }
+
+
+
+        /* HERO */
+
+        .hero {
+
+            width: 100%;
+            height: 90vh;
+
+        }
+
+
+
+        .hero h1 {
+
+            font-size: 35px;
+            padding: 0 20px;
+
+        }
+
+
+
+        .hero p {
+
+            font-size: 14px;
+            padding: 0 20px;
+
+        }
+
+
+
+
+        /* PRODUCTOS */
+
+        .productos {
+
+            width: 100%;
+            grid-template-columns: 1fr;
+
+        }
+
+
+        .card {
+
+            width: 100%;
+
+        }
+
+
+
+        /* CARRITO */
+
+        .carrito {
+
+            margin: 20px;
+            padding: 25px;
+
+        }
+
+
+
+        /* CONTACTO */
+
+        .contacto {
+
+            margin: 20px;
+            padding: 40px 20px;
+
+        }
+
+
+
+        .contacto a {
+
+            display: inline-block;
+
+            background: #b98b4c;
+
+            color: white;
+
+            padding: 12px 25px;
+
+            border-radius: 25px;
+
+            text-decoration: none;
+
+        }
+
+
+
+    }
+
+
+
+    /* BOTON FLOTANTE WHATSAPP */
+
+    .whatsapp {
+
+        z-index: 9999;
+
+    }
+
 
 }
